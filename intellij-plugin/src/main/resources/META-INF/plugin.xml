@@ -25,14 +25,14 @@
         </group>
 
         <!-- Add your actions here -->
-        <action id="com.gifgroen.actions.BundlePropAction" class="com.gifgroen.actions.BundlePropAction"
+        <action id="com.gifgroen.actions.BundlePropAction1" class="com.gifgroen.actions.BundlePropAction"
                 text="Show Bundle Property" description="Show a property from the bundle file" popup="true">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
 
         <group id="org.intellij.sdk.action.GroupedActions" text="Dependency Package Search" popup="true">
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
-            <action id="com.gifgroen.actions.BundlePropAction" class="com.gifgroen.actions.BundlePropAction"
+            <action id="com.gifgroen.actions.BundlePropAction2" class="com.gifgroen.actions.BundlePropAction"
                     text="Show Bundle Property" description="Show a property from the bundle file"/>
         </group>
     </actions>
