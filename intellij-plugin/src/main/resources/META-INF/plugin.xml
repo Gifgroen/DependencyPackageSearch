@@ -1,0 +1,40 @@
+<idea-plugin>
+    <id>com.gifgroen.dependencyPackageSearch</id>
+    <name>Dependency Packae Search</name>
+    <vendor email="info@gifgroen.com" url="http://www.gifgroen.com">Colour in Motion</vendor>
+
+    <description><![CDATA[
+    Plugin that visualizes and manages dependencies in a gradle project.
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group id="DependencyPackageSearch.TopMenu"
+               text="_MyPlugin"
+               description="MyPlugin toolbar menu">
+            <add-to-group group-id="MainMenu" anchor="last"/>
+            <action id="MyAction" class="com.gifgroen.actions.BundlePropAction" text="_MyAction"
+                    description="MyAction"/>
+        </group>
+
+        <!-- Add your actions here -->
+        <action id="com.gifgroen.actions.BundlePropAction" class="com.gifgroen.actions.BundlePropAction"
+                text="Show Bundle Property" description="Show a property from the bundle file" popup="true">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+
+        <group id="org.intellij.sdk.action.GroupedActions" text="Dependency Package Search" popup="true">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+            <action id="com.gifgroen.actions.BundlePropAction" class="com.gifgroen.actions.BundlePropAction"
+                    text="Show Bundle Property" description="Show a property from the bundle file"/>
+        </group>
+    </actions>
+
+</idea-plugin>
