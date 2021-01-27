@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.gifgroen.dependencyPackageSearch</id>
     <name>Dependency Packae Search</name>
-    <vendor email="info@gifgroen.com" url="http://www.gifgroen.com">Colour in Motion</vendor>
+    <vendor email="info@gifgroen.com" url="http://gifgroen.com">Colour in Motion</vendor>
 
     <description><![CDATA[
     Plugin that visualizes and manages dependencies in a gradle project.
@@ -10,9 +10,21 @@
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
     <depends>com.intellij.modules.platform</depends>
+<!--    <depends>org.jetbrains.plugins.gradle</depends>-->
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
+        <toolWindow factoryClass="com.gifgroen.ui.toolwindow.DependencyToolWindowFactory" id="Dependencies" anchor="bottom"/>
+
+        <localInspection
+                bundle="messages.dependencyPackageSearch"
+                enabledByDefault="true"
+                groupKey="com.gifgroen.inspection.update.group"
+                implementationClass="com.gifgroen.inspection.GradleDependencyInspection"
+                key="com.gifgroen.inspection.update.key.gradle"
+                hasStaticDescription="true"
+                level="WARNING"/>
+
     </extensions>
 
     <actions>
